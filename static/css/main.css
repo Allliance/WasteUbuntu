@@ -1,0 +1,9 @@
+body {
+    margin : 0;
+    font-family: sans-serif;
+    background-color: blanchedalmond;
+}
+a, a:visited, a:hover, a:active {
+    color: inherit;
+    text-decoration: none;
+  }
