@@ -1,9 +1,36 @@
+header{
+    background-color: #fd7e14;
+}
 body {
     margin : 0;
     font-family: sans-serif;
     background-color: blanchedalmond;
 }
+
 a, a:visited, a:hover, a:active {
     color: inherit;
     text-decoration: none;
-  }
+}
+
+label{
+    vertical-align: top;
+}
+
+.form-control{
+    outline: none;
+}
+
+textarea{
+    resize : none;
+    width : 80%;
+    height: 400px;
+}
+
+.postFrom{
+    display: table;
+    margin: 20px 100px;
+}
+
+.formRow{
+    display: table-row;
+}
