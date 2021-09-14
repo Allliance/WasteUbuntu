@@ -22,8 +22,8 @@ label{
 
 textarea{
     resize : none;
-    width : 80%;
-    height: 400px;
+    width: 500px;
+    height: 500px;
 }
 
 .postFrom{
@@ -37,4 +37,21 @@ label, text, textarea {
 
 .formRow{
     display: table-row;
+}
+
+.submitButton{
+    width:100%;
+}
+
+div{
+    margin: auto;
+}
+
+input{
+    width:100%;
+}
+
+table{
+    margin:auto;
+    text-align: left;
 }

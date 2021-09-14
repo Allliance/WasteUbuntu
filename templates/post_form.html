@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="/static/css/bootstrap-5.1.1-dist/css/bootstrap.min.css">
+{% endblock %}
+
+{% block body %}
+    <form action="/post" method="POST" class="form-control">
+        <div class="col-5" style="text-align: center">
+            <table>
+                <tr>
+                    <td><label for="author">Author</label></td>
+                    <td><input type="text" name="author" placeholder="Author..."></td>
+                </tr>
+                <tr>
+                    <td valign="top"><label for="text">Text: </label></td>
+                    <td><textarea placeholder="waste here..."></textarea></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input value="Post!" type="submit" class="submitButton btn btn-success"></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+{% endblock %}

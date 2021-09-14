@@ -6,9 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    x = 3
-    print(request.base_url)
-    return render_template('index.html')
+    return render_template('post_form.html')
 
 
 @app.route('/post', methods=['POST', 'GET'])
