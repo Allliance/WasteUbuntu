@@ -9,7 +9,9 @@
         <form action="/post" method="POST" class="form-control">
             <div class="formRow">
                 <label for="author">Author: </label>
-                <input name="author" type="text" placeholder="Author...">
+                <input name="author" {% if 1==2 %}
+                       disabled
+                {% endif %}type="text" placeholder="Author...">
             </div>
             <div class="formRow">
                 <label for="text">Text: </label>

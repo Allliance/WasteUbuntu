@@ -31,6 +31,10 @@ textarea{
     margin: 20px 100px;
 }
 
+label, text, textarea {
+    padding : 10px;
+}
+
 .formRow{
     display: table-row;
 }
