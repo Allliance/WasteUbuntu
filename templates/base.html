@@ -16,8 +16,10 @@
 <header style="text-align: center;">
     <div class="row" style="overflow: auto; align-content: center;">
         <div class="col-3">
-            <img src="{{ url_for('static', filename='icons/ubuntu.png') }}" style="width: 10%; height: 100%;"/>
-            <a style="display: inline; font-size: xx-large; font-weight: bold;" href="/">Waste Ubuntu</a>
+            <a style="display: inline; font-size: xx-large; font-weight: bold;" href="/">
+                <img src="{{ url_for('static', filename='icons/ubuntu.png') }}" style="width: 20%; height: 110%;"/>
+                Waste Ubuntu
+            </a>
         </div>
     </div>
 </header>
@@ -58,6 +60,7 @@
     </div>
 {% endif %}
 <hr>
+
 <div class="row">
     <div class="col-9" style="background-color: transparent">
         {% block body %} {% endblock %}
@@ -68,7 +71,21 @@
                 <li class="list-group-item">
                     <a href="/post/{{ post.pid }}" class="link-info">{{ post.pid }}</a> By: {{ post.author }}
                     {% if post.author == g.user %}
-                        <button class="btn-close" style="text-align: right;"></button>
+                        <script>
+                            delete_post = async function() {
+                                const res = fetch('/delete_post', {
+                                    method: 'DELETE',
+                                    headers: {
+                                        'pid': '{{ post.pid }}',
+                                        'Content-type': 'application/json'
+                                    }
+                                });
+                                res.then(() => {
+                                    location.href = '/post'
+                                })
+                            }
+                        </script>
+                        <button class="btn-close" style="text-align: right;" onclick="delete_post()"></button>
                     {% endif %}
                 </li>
             {% endfor %}

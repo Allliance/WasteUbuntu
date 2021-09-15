@@ -27,7 +27,7 @@ def check_user_log():
 
 @app.route('/')
 def index():
-    return render_template('post_form.html')
+    return redirect(url_for('post_content'))
 
 
 @app.route('/post', methods=['GET', 'POST'])
@@ -43,6 +43,15 @@ def post_content():
         return redirect('/post/' + pid)
     else:
         return render_template('post_form.html')
+
+
+@app.route('/delete_post', methods=['DELETE'])
+def delete_post():
+    pid = request.headers['pid']
+    content_manager.delete_post(pid)
+    global CONTENT
+    CONTENT = flask.g.content = content_manager.CONTENT
+    return make_response()
 
 
 @app.route('/post/<pid>')

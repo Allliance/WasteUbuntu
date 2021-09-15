@@ -50,6 +50,14 @@ def post_content(author, text):
     return post.pid
 
 
+def delete_post(pid):
+    for post in CONTENT:
+        if post.pid == pid:
+            CONTENT.remove(post)
+            break
+    save_data()
+
+
 def get_content(pid):
     post_file = open(os.path.join(CONTENT_DIRECTORY_PATH, pid), 'r')
     return post_file.read()
