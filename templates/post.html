@@ -1,10 +1,16 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<link rel="stylesheet" href="/static/css/bootstrap-5.1.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-5.1.1-dist/css/bootstrap.min.css">
 {% endblock %}
 
 {% block body %}
+    <div class="row" style="text-align: center;">
+        <h2>By : {{ post.author }}</h2>
+        <div style="text-align:left;background: #ffffff; overflow:auto;width:750px;height:600px;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
+            <pre style="margin: 0; line-height: 125%">{{ post.text }}</pre>
+        </div>
 
+    </div>
 
 {% endblock %}

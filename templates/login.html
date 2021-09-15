@@ -1,24 +1,33 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<link rel="stylesheet" href="/static/css/bootstrap-5.1.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap-5.1.1-dist/css/bootstrap.min.css">
 {% endblock %}
 
 {% block body %}
-    <form class="form-control" method="post" action="/signup">
+    <form class="form-control" method="post" action="/login">
         <h1 style="text-align: center">Login</h1>
         <table style="text-align: left">
-            <tr>
-                <td><label for="password">Password</label></td>
-                <td><input type="password" name="password" class="form-control"></td>
-            </tr>
             <tr>
                 <td><label for="username">Username: </label></td>
                 <td><input type="text" name="username" class="form-control"></td>
             </tr>
             <tr>
+                <td><label for="password">Password</label></td>
+                <td><input type="password" name="password" class="form-control"></td>
+            </tr>
+            <tr>
                 <td></td>
-                <td><input type="submit" value="SignUp" class="btn btn-info"></td>
+                <td>
+                    <spin>
+                        {{ erorr }}
+                    </spin>
+                </td>
+            </tr>
+            <br>
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Login" class="btn btn-success"></td>
             </tr>
         </table>
     </form>

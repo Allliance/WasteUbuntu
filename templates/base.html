@@ -21,24 +21,56 @@
         </div>
     </div>
 </header>
-{% if 1==1 %}
+{% if g.user %}
     <div class="row">
         <table class="logoutPanel">
             <tr>
-                <td><h1>Welcome {{ 2*2 }}</h1></td>
-                <td><input name="logout" type="button" value="Logout" style="width:50% "></td>
+                <td><h1>Welcome {{ g.user }}</h1></td>
+                <td>
+                    <a href="{{ url_for('logout') }}">
+                        <input name="logout" type="button" value="Logout" class="btn-danger btn" style="width: 200px">
+                    </a>
+                    <a href="{{ url_for('post_content') }}">
+                        <input name="post" type="button" value="Waste" class="btn-secondary btn" style="width: 200px">
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+{% else %}
+    <div class="row">
+        <table class="loginPanel">
+            <tr>
+                <td>
+                    <a href="{{ url_for('login') }}">
+                        <input name="login" type="button" value="Login" class="btn-primary btn" style="width: 200px">
+                    </a>
+                    <a href="{{ url_for('signup') }}">
+                        <input name="signup" type="button" value="SignUp" class="btn-success btn" style="width: 200px">
+                    </a>
+                    <a href="{{ url_for('post_content') }}">
+                        <input name="post" type="button" value="Post as Ghost" class="btn-secondary btn"
+                               style="width: 200px">
+                    </a>
+                </td>
             </tr>
         </table>
     </div>
 {% endif %}
+<hr>
 <div class="row">
     <div class="col-9" style="background-color: transparent">
         {% block body %} {% endblock %}
     </div>
     <div class="col-3" style="background-color: #0f5132">
         <ul class="list-group">
-            {% for i in range(1,10) %}
-                <li class="list-group-item">{{ i }}</li>
+            {% for post in g.content %}
+                <li class="list-group-item">
+                    <a href="/post/{{ post.pid }}" class="link-info">{{ post.pid }}</a> By: {{ post.author }}
+                    {% if post.author == g.user %}
+                        <button class="btn-close" style="text-align: right;"></button>
+                    {% endif %}
+                </li>
             {% endfor %}
         </ul>
     </div>

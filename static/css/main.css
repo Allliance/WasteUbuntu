@@ -55,3 +55,8 @@ table{
 .logoutPanel{
     text-align: center;
 }
+
+.loginPanel{
+    text-align: left;
+    padding: 10px;
+}
