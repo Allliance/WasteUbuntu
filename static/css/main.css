@@ -16,10 +16,6 @@ label{
     vertical-align: top;
 }
 
-.form-control{
-    outline: none;
-}
-
 textarea{
     resize : none;
     width: 500px;
@@ -54,4 +50,8 @@ input{
 table{
     margin:auto;
     text-align: left;
+}
+
+.logoutPanel{
+    text-align: center;
 }
