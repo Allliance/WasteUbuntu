@@ -1,2 +1,2 @@
 # WasteUbuntu
-Local UbuntuPasteBin implemented in flask framework.
+Local UbuntuPasteBin implemented in Flask framework.
